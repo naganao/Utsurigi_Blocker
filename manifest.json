@@ -12,5 +12,15 @@
   ],
   "icons" : {
     "128": "icon.png"
-  }
+  },
+  "background": {
+  "scripts": ["background.js"],
+   "persistent": false
+},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-3.2.1.js","script.js"]
+    }
+  ]
 }

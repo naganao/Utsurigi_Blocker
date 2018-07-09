@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>Utsurigi Blocker</title>
-    <link rel="stylesheet" href="css/popup.css" type="text/css">
-    <!-- Load JavaScript-->
-    <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/popup.js"></script>
-  </head>
-  <body>
-    <p id="title"></p>
-    <p id="url"></p>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Utsurigi Blocker</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/popup.css" type="text/css">
+  <!-- Load JavaScript-->
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="contents">
+    <p>Utsurigi Blocker</p>
+    <p>移り気したくないサイトを選んでください</p>
+    <div>
+      <input type="checkbox" id="Amazon" name="site" value="Amazon">
+      <label for="Amazon">Amazon</label>
+    </div>
+    <div>
+      <input type="checkbox" id="YouTube" name="site" value="YouTube">
+      <label for="YouTube">YouTube</label>
+    </div>
+  </div>
+  <!-- <p id="title"></p>
+  <p id="url"></p>
+  <p id="caution"></p> -->
+</body>
 </html>
