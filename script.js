@@ -1,7 +1,8 @@
 $(function(){
   chrome.runtime.sendMessage({method: "getLocalStorage", key: "Amazon"}, function(response) {
-    console.log(response.data);
-    if (response.data.indexOf('checked') == 0) {
+    console.log(JSON.parse(response.data));
+    var data = JSON.parse(response.data);
+    if (data["status"].indexOf('checked') == 0) {
       var tabURL = window.location.href;
       //console.log(tabURL);
       if (tabURL.indexOf('http://www.amazon.co.jp') == 0 ||
@@ -15,7 +16,8 @@ $(function(){
   });
 
   chrome.runtime.sendMessage({method: "getLocalStorage", key: "YouTube"}, function(response) {
-    if (response.data.indexOf('checked') == 0) {
+    var data = JSON.parse(response.data);
+    if (data["status"].indexOf('checked') == 0) {
       var tabURL = window.location.href;
 
       if (tabURL.indexOf('http://www.youtube.com') == 0 ||
