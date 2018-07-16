@@ -118,4 +118,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 ## 追加でやるべきこと
 - リファクタリング
-メソッド分割
+- メソッド分割
+- サイトを削除する機能
+- 追加サイトをブロックする機能

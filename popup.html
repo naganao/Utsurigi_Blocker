@@ -16,20 +16,22 @@
     <img src="icon.png"/>
     <h1>Utsurigi Blocker</h1>
     <p>移り気したくないサイトを選んでください</p>
-    <div class="site_name">
-      <input type="checkbox" id="Amazon" name="site" value="Amazon">
-      <label for="Amazon">Amazon</label>
-    </div>
-    <div class="site_name">
-      <input type="checkbox" id="YouTube" name="site" value="YouTube">
-      <label for="YouTube">YouTube</label>
+    <div id="site_list">
+      <!-- <div class="site_name">
+        <input type="checkbox" id="Amazon" name="site" value="Amazon">
+        <label for="Amazon">Amazon</label>
+      </div>
+      <div class="site_name">
+        <input type="checkbox" id="YouTube" name="site" value="YouTube">
+        <label for="YouTube">YouTube</label>
+      </div> -->
     </div>
     <p>サイトを追加</p>
     <div class="add_site">
       <input type="text" id="add_site_name" placeholder="サイト名"></textbox>
       <input type="text" id="add_domain_name" placeholder="ドメイン名"></textbox>
       <button id="addSite">add</button>
-      <ul id="site_list"></ul>
+      <div id="caution"></div>
     </div>
   </div>
   <!-- <p id="title"></p>
