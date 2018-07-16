@@ -37,6 +37,10 @@ chrome.tabs.getSelected(null, function(tab) {
 
 - #### ローカルストレージ
 
+localStorageに1つのキーに対し複数のデータを保存したいとき、オブジェクトとして保存します。
+
+#### ローカルストレージ
+
 ```js
 /* ローカルストレージに保存 */
 localStorage.setItem('key', 'val')
@@ -44,6 +48,41 @@ localStorage.setItem('key', 'val')
 /* ローカルストレージから値を取得 */
 localStorage.getItem('key')
 ```
+
+#### オブジェクトとして保存
+
+```js
+var obj = {
+  name: "taro",
+  age: 20,
+  height: 170,
+  weight: 60
+}
+
+/* オブジェクトとして登録 */
+localStorage.setItem("taro", JSON.stringify(obj));
+console.log(localStorage.getItem("taro"));
+// {"name":"taro","age":20,"height":170,"weight":60}
+
+/* オブジェクトを登録（JSON.stringifyなし） */
+localStorage.setItem("taro", obj);
+console.log(localStorage.getItem("taro"));
+// [object Object]
+
+/* 取り出し */
+var person = JSON.parse(localStorage.getItem("taro"));
+console.log("age:",person["age"]);
+// age: 20
+
+/* 取り出し（JSON.parseなし） */
+var person = localStorage.getItem("taro");
+console.log("age:",person["age"]);
+// age: undefined
+```
+
+参考
+https://www.tam-tam.co.jp/tipsnote/javascript/post5978.html
+
 
 - #### チェックボックスの状態変化
 propを用いる。

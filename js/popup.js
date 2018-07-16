@@ -76,6 +76,29 @@ function checkSite(site_name) {
 
 }
 
+/* サイト追加 */
+$(function() {
+  $("#addSite").click(function() {
+    // $("#site_list").append('<input type="text"></textbox>');
+    var name = $("#add_site_name").val();
+    var domain = $("#add_domain_name").val();
+    var site_data = {
+      name: name,
+      domain: domain,
+      status: "checked"
+    }
+
+    console.log(name);
+    localStorage.setItem(name, JSON.stringify(site_data));
+    console.log(localStorage.getItem(name));
+    var list = JSON.parse(localStorage.getItem(name));
+    console.log(list);
+    console.log("name",list["name"]);
+    console.log("domain",list["domain"]);
+    console.log("status",list["status"]);
+  });
+});
+
 // function () {
 //   var site_list = [];
 //
