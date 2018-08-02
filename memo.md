@@ -11,7 +11,39 @@
 - jquery
 
 ### manifest.json
-ここに
+ここにいろいろ記述
+
+- name
+extension名
+
+```json
+{
+  "manifest_version": 2,
+  "name": "Utsurigi Blocker",
+  "version": "1.0",
+  "description": "関係のない新しいタブを開きすぎない",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "icons" : {
+    "128": "icon.png"
+  },
+  "background": {
+  "scripts": ["background.js"],
+   "persistent": false
+},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-3.2.1.js","script.js"]
+    }
+  ]
+}
+```
 
 ### popup.html
 ポップアップページ（アイコンをクリックしたら表示されるページ）。
